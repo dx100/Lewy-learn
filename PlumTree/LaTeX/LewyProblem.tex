@@ -1,0 +1,93 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%SetFonts
+
+%SetFonts
+\renewcommand{\arraystretch}{1.5}
+
+\title{Lewy's Plum Tree Problem}
+\author{Lewy and Da}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section{The Problem}
+There are 100 fresh plums on a plum tree including 3 rotten ones. Every day, each plum has a 35\% chance of rotting, if they are over 2 days old. Every day, 3 fresh plums grow. The farmer comes and takes 75\% of the rotten plums every 4 days, stopping the rot by 2 days. After 2 weeks:
+
+\begin{itemize}
+\item How many fresh plums are there?
+\item How many rotten plums are still on the tree?
+\item How many total plums are there?
+\item How many rotten plums did the farmer collect?
+\item How many rotten plums were there in total?
+\end{itemize}
+
+\section{The Representation}
+
+\subsection{Observable variables}
+\begin{center}
+ \begin{tabular}{| c | l |} 
+ \hline
+ \bf{\em{Symbol}}& \bf{\em{Notes}} \\ [0.5ex] 
+ \hline\hline
+ t & Time, unit is day  \\ 
+ \hline
+ P & Total plums  \\
+ \hline
+ R & Number of rotten plums on the tree  \\
+ \hline
+ G & Number of good plums  \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Hidden variable and parameters}
+\begin{center}
+\begin{tabular}{| c | l |}
+\hline
+\bf{\em{Symbol}}  & \bf{\em{Notes}} \\
+\hline
+$r_1$ & The probability of disease infections. In this case, $r_1 = 0.35$ \\
+\hline
+$f_1$ &
+	\begin{tabular}{@{}l@{}}Farmer factor-1,to activate the rotting infection. In particular,\\ 
+		\quad $f_1 =
+			\left\{
+			    \begin{array}{ll}
+	        			0  &  \mbox{for day 1 \& 2 after farmer's dis-infection day} \\
+	        			1  &  \mbox{for other days} \\
+	    		   \end{array}
+		\right . $ 
+	\end{tabular} \\  
+\hline
+$f_2$ & 
+	\begin{tabular}{@{}l@{}}Farmer factor-2,to remote rotten plums. In particular,\\ 
+		\quad $f_2 =
+			\left\{
+			    \begin{array}{ll}
+	        			r_2  & \mbox{on farmer's dis-infection day. In Lewy's case, $r_2=0.75$}\\
+	        			0  &  \mbox{else where} 
+	    		   \end{array}
+		\right . $ 
+	\end{tabular} \\  
+\hline
+M & Number of plums subjected to the rotting diseases, i.e. good plums $>$ 2 days \\
+\hline
+N & Temporary variable ($N=R + r_1 * M * f_1$), representing the number of diseased plums. \\
+\hline
+Q & The number of new plums per day. In Lewy's statement, $Q=3$ \\
+\hline
+
+\end{tabular}
+\end{center}
+\end{document}  
