@@ -6,7 +6,7 @@ def f(x):
     return (x + 2.0*np.cos(x))/(4.0 + 3.* np.sin(x))
 
 
-t1 = np.arange(0.0, 100.0, 0.1)
+t1 = np.arange(0.0, 100.0, 0.5)
 
 ax1 = plt.subplot(212)
 ax1.margins(0.05)           # Default margin is 0.05, value 0 means fit
