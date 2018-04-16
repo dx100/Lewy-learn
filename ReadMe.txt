@@ -5,4 +5,5 @@ DynamicalSystem: iPython notebook for state space modelling example (the YouTube
 SymPy: 		 iPython notebook for learning SymPy. I am disappointed as I cannot get the Laplace Transform working (19/10/2017)
 ImageProcessing: 
 misc:		 RandomEqPlot.py, as its name suggests.
+hello:       For learning VSCode. Ref: https://code.visualstudio.com/docs/python/python-tutorial
 
